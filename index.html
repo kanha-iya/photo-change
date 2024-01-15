@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center; ">First Thing for You !</h1> 
+    <h2>Select Quality</h2>
+    <label for="quality">Quality</label>
+
+    <select name="quality" id="quality" onchange="changeImage()">
+    <option value="240">240px</option>
+    <option value="480">480px</option>
+    <option value="720">720px</option>
+    <option value="1080">1080px</option>
+    </select>
+    <div id="result">
+        <img id="imgID" height="500px" width="400px" src="./images/240.jpeg" alt="">
+    </div>
+    <script>
+        let loc=document.getElementById("imgID") 
+        function changeImage() {
+            // Get the selected value from the dropdown
+            var selectedImage = document.getElementById("quality").value;
+            if(selectedImage=="240") loc.src="./images/240.jpeg"; 
+            else if(selectedImage=="480") loc.src="./images/480.gif"; 
+            else if(selectedImage=="720") loc.src="./images/720.webp"; 
+            else if(selectedImage=="1080") loc.src="./images/1080.jpg"; 
+            
+            // Set the source of the displayed image
+            //document.getElementById("displayedImage").src = selectedImage;
+        }
+    </script>
+</body>
+
+</html>
